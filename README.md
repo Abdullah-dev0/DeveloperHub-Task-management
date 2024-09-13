@@ -1,9 +1,7 @@
-# --------------- | Task Management App | ----------------
-### ----------- MERN stack Web Application -----------
+#  Task Management App 
+### MERN stack Web Application 
 #
-# URL
-### Live Site: https://task-management-dmf.netlify.app/
-### SERVER:  https://task-management-app-kappa.vercel.app/
+
 
 # Featured
 - Show Task
