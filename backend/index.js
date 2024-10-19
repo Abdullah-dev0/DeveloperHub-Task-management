@@ -14,16 +14,17 @@ app.use(
 app.use(express.json());
 
 // connect with mongodb
-mongoose.connect(process.env.MONGODB_URI, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-});
+// mongoose.connect(process.env.MONGODB_URI, {
+// 	useNewUrlParser: true,
+// 	useUnifiedTopology: true,
+// });
 
 mongoose.connection.on("connected", () => {
 	console.log("Mongoose is connected");
 });
-
-app.use("/", taskRoute);
+const userRoute = require("./routes/userRoute");
+app.use("/api", taskRoute);
+app.use("/api/auth", userRoute);
 
 app.get("/", (req, res) => {
 	res.send("Task Manager Server is Running");
@@ -32,3 +33,6 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
 	console.log(`Server is running on port ${port}`);
 });
+
+
+export default app;
